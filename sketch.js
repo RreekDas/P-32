@@ -5,7 +5,7 @@ const Constraint = Matter.Constraint;
 
 var engine, world;
 var backgroundImg;
-var hour=responseJSON.datetime.slice(11,13);;
+var hour;
 
 var bg = "sunrise.png";
 
@@ -35,7 +35,7 @@ function draw(){
     }else if(hour==0){
         text("Time : 12 AM",100,100);
     }else{
-        text("Time : "+ hour%12 + " AM", 50,100);
+        text("Time : "+ hour%12 + " AM", 50,100);   12
     }
 
 }
@@ -47,15 +47,16 @@ async function getBackgroundImg(){
     
  
     //change the data in JSON format and store it in variable responseJSON
-    var responseJSON=await request.json
+    var responseJSON=await request.json()
     
 
     
     //fetch datetime from responseJSON
-    var datetime=responseJSON.datetime;
+    hour=responseJSON.datetime.slice(11,13)
     
 
     // slice the datetime to extract hour
+
     
 
     
